@@ -1,0 +1,58 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="/style1.css">
+	<script type="text/javascript" src="public/modernizr.custom.86080.js"></script>
+</head>
+<body id="page" style="margin-top: 10px;">
+	<ul style="list-style: none; z-index: -1;" class="cb-slideshow">
+	            <li><span>Image 01</span><div><h5></h5></div></li>
+	            <li><span>Image 02</span><div><h5></h5></div></li>
+	            <li><span>Image 03</span><div><h5></h5></div></li>
+	            <li><span>Image 04</span><div><h5></h5></div></li>
+	            <li><span>Image 05</span><div><h5></h5></div></li>
+	            <li><span>Image 06</span><div><h5></h5></div></li>
+	</ul>
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+<div class="jumbotron">
+	<h1>Login</h1>
+
+<%= form_tag author_sessions_path, method: :post do %>
+  <div class="row">
+		  <div class="col-md-2">
+		  <div class="field">
+		    <%= label_tag :email %>
+		    <%= text_field_tag :email %>
+		    <br/>
+		  </div>
+		  </div>
+  </div>
+  <div class="row">
+		  	<div class="col-md-2">
+		  <div class="field">
+		    <%= label_tag :password %>
+		    <%= password_field_tag :password %>
+		    <br/>
+		  </div>
+		  
+		  </div>
+  </div>
+  <br>
+  <div class="actions">
+    <%= submit_tag "Login", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<br>
+<%= link_to "Create an Account", '/authors/new' %> 
+</div>
+</div>
+
+<div class="col-md-8">
+	<h1 style="color: white;" align="center"><u>Welcome to <span style="color: #f04545;">Blogger</span>.</u></h1>
+	<p><h3 style="color: white;" align="center">A blog is an online web journal that contains text, photographs and graphics, and links to other blogs, websites, and related media. The term comes from the combination of the words web or website and the word log (or journal). The person who creates a blog is called a blogger.  Anyone can become a blogger - all you need is a computer with an internet connection, a free account from a blog provider, and the desire to share your ideas with the world.</h3></p>
+	<p align="center"><%= link_to 'Read Articles', articles_path, class: 'btn btn-default' %></p>
+</div>
+</div>
+
+</div>
+</body>

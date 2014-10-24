@@ -1,0 +1,36 @@
+<style type="text/css">	
+	.articles{
+		list-style: none;
+	}
+	.articles ul li{
+		list-style: none;
+		font-size: 24px;
+		line-height: 200%;
+	}
+</style>
+<body background="/3.jpg">
+<div class="container">
+<div class="row">
+	<div class="col-md-8">
+		<h1 style="color: white;">All Articles</h1>
+	</div>
+	<div class="col-md-1">
+		<h1><%= link_to "Tags", tags_path, class: "btn btn-primary" %></h1>
+	</div>
+	<div class="col-md-2">
+		<h1><%= link_to "Create New Article", new_article_path, class: "btn btn-primary" %></h1>
+	</div>
+</div>
+<div class="jumbotron">
+<div class="articles">
+<ul>
+	<% @articles.each do |article| %>
+	<li>
+		<%= link_to article.title, article_path(article) %>
+	</li>
+	<% end %>
+</ul>
+</div>
+</div>
+</div>
+</body>

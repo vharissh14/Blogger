@@ -1,0 +1,17 @@
+<body background="/3.jpg">
+<div class="container">
+<div class="jumbotron">
+<h1>All Tags</h1>
+<ul style="list-style: none;">
+<% @tags.each do |tag| %>
+<li>
+<%= link_to tag.name, tag_path(tag) %>
+&nbsp; &nbsp;
+<%= link_to "destroy", tag_path(tag), :method => :delete, class: 'btn btn-default' %>
+</li>
+<% end %>
+</ul>
+</div>
+</div>
+<div class="btn btn-default"><%= link_to "Back To Articles List", articles_path %></div>
+</body>

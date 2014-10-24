@@ -1,0 +1,14 @@
+<body background="/3.jpg">
+<div class="container">
+<div class="jumbotron">
+<h1>Articles Tagged with <%= @tag.name %></h1>
+
+<ul style="list-style: none;">
+  <% @tag.articles.each do |article| %>
+    <li><h3><%= link_to article.title, article_path(article) %></h3></li>
+  <% end %>
+</ul>
+</div>
+</div>
+<div class="btn btn-default"><%= link_to "Back To Tags List", tags_path %></div>
+</body>
