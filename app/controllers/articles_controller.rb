@@ -20,6 +20,7 @@ before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 	def create
 		  @article = Article.new(article_params)
 		  @article.save
+		  flash.notice = "Article '#{@article.title}' Created!"	
 		  redirect_to article_path(@article)
 	end
 

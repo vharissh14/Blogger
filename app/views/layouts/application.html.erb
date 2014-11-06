@@ -11,14 +11,18 @@
 <body>
   <div class="container">
     <div id="content">
-      <h6>
+      <div class="logdet">
+      <%= bootstrap_flash %>
+      <h4>
         <% if logged_in? %>
-          <p style="color: white;"><%= "Logged in as #{current_user.email}" %></p>
-          <%= link_to "(logout)", logout_path %>
+          <p style="color: white;"><%= "#{current_user.email}" %>
+          <%= link_to "Signout", logout_path %>
         <% else %>
-          <%= link_to "(login)", login_path %>
-        <% end %>
-      </h6>
+          <%= link_to "SignIn", login_path %>
+        <% end %></p>
+      </h4>
+      </div>
+      
        <%= yield %>
     </div>
   </div>
