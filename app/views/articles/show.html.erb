@@ -16,6 +16,9 @@
 </div>
 <div class="jumbotron">
 <h1><%= @article.title %></h1>
+<% if @article.image.exists? %>
+<p><%= image_tag @article.image.url %></p>
+<% end %>
 <p><%= @article.body %></p>
 <h3><%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Do you want to delete '#{@article.title}'?"}
  %> |
