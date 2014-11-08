@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-config.action_mailer.default_url_options = { host: "localhost:3000" }
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
