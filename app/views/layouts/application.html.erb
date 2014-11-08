@@ -12,8 +12,8 @@
   <div class="container">
     <div id="content">
       <div class="logdet">
-      <%= bootstrap_flash %>
       <h4>
+      <%= bootstrap_flash %>
         <% if logged_in? %>
           <p style="color: white;"><%= "#{current_user.email}" %>
           <%= link_to "Signout", logout_path %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  match '/mail', to: 'email#mail', via: 'post'
   root to: 'author_sessions#new'
   resources :articles do
   		resources :comments

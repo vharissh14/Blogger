@@ -28,7 +28,8 @@ gem 'spring',        group: :development
 gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem 'less-rails'
-gem 'will_paginate'
+gem "mail"
+gem 'will_paginate', '~> 3.0'
 gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

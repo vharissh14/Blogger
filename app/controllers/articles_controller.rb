@@ -3,7 +3,7 @@ before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 	include ArticlesHelper
 
 	def index
-		@articles=Article.all
+		@articles=Article.all.paginate(:page => params[:page], :per_page => 4)
 	end
 
 	def show
@@ -21,6 +21,7 @@ before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 		  @article = Article.new(article_params)
 		  @article.save
 		  flash.notice = "Article '#{@article.title}' Created!"	
+		  ArticleMailer.send_emails_request(@article)
 		  redirect_to article_path(@article)
 	end
 
